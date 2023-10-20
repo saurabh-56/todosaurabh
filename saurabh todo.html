@@ -1,0 +1,134 @@
+<html>
+    <head>
+        <title>TO-DO LIST</title>
+    </head>
+    <body>
+        <style>
+            h2{
+                align:center;
+                margin-left: 150px;
+
+            } 
+
+            body{
+                display:flex;
+                align-items:top;
+                justify-content:center;
+                background-color:grey;
+            }
+            .square{
+                position:relative;
+                background:black;
+                border-radius:55px;
+                height:120%;
+                width: 107%;
+                justify-content: center;
+                align-items: center;
+        
+        }
+    .conr{
+             box-sizing:border-box;
+             border-radius:20px;
+             background-color:black;
+             color:salmon;
+             margin-top:10px;
+             font-weight: bolder;
+             font-size:large;
+             height:15%;
+             width:35%;
+
+
+
+    }
+        #inputbox{
+            position:relative;
+            border:none;
+            padding:10px;
+            margin:24px;
+            width:60%;
+            font-size:medium;
+        }
+        .text nelnt{
+                position:relative;
+                display:flex;
+                gap:20px;
+                background-color:black;
+                color:whitesmoke;
+                font-weight:bold;
+                font-size:medium;
+                margin:15px 0;
+                padding:10px;
+                box-sizing:border-box;
+                text-align:left;
+                font-size:medium;
+            }
+            .text nelnt i{
+                position:absolute;
+                right:10px;
+                cursor:pointer;
+            }
+
+            .butn{
+                box-sizing:border-box;
+                border-radius:30px;
+                background-color:blue;
+                color:black;
+                font-weight: bolder;
+                font-size:large;
+                height:25%;
+                width:15%;
+            }
+               .text nelnt span{
+                position:absolute;
+                right:0;
+                top:5px;
+                width:40px;
+                height:40px;
+                font-size:medium;
+                color:brown;
+                line-height:40px;
+                text-align:center;
+                border-radius:50%;
+            }
+            }
+
+
+      </style>
+         <div class="conr">
+            <h2>To-Do List</h2><br/>
+            <hr noshade color="black" Align="center">
+            <br/><br/>
+            <div class="square">
+              
+                <input type="text" placeholder="ENTER TASK" id="inputbox">
+                <button onclick="addTask()" class="butn">+</button>
+                       
+            </div>
+            <div class="text">
+
+            </div>
+         </div>
+         </div>
+         
+            <script>
+                    let inputs = document.getElementById("inputbox");
+                    let text= document.querySelector(".text");
+                    function addTask(){
+                        if(inputs.value==""){
+                            alert("NO TASK ENTERED,PLEASE ENTER")
+
+                        }else{
+                             let nelnt=document.createElement("nelnt");
+                             nelnt.innerHTML=`${inputs.value}`;
+                             text.appendChild(nelnt);
+                             let span= document.createElement("span");
+                             span.innerHTML="\u00d7";
+                             text.appendChild(span);
+                             inputs.value="";
+                             nelnt.querySelector("i").addEventListener("click" , remove);
+                             function remove(){}
+                        }
+                    }
+         </script>
+    </body>
+</html>
